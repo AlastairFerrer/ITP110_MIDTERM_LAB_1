@@ -15,7 +15,6 @@ class OrderController
             $items = Order_items::with(['orders_id', 'items_id'])->get();
 
             return view('index', compact('items'));
-            // return response()->json(['data'=> $items]);
 
         }catch(\Throwable $th){
             return response()->json(['message' => $th->getMessage()], 500);

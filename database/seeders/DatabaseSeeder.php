@@ -36,12 +36,6 @@ class DatabaseSeeder extends Seeder
             'customer_name' => 'bren caivan salamat',
             'order_status' => 1,
         ]);
-        Orders::factory()->create([
-            'order_id' => 2002,
-            'transaction_no' => 1112131415,
-            'customer_name' => 'alastair ferrer',
-            'order_status' => 1,
-        ]);
         Order_items::factory()->create([
             'order_id' => 3001,
             'order_id' => 2001,
