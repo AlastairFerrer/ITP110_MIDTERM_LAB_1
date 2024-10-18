@@ -36,7 +36,7 @@ class OrderController
     public function search(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'query' => 'required|string|max:255',
+            'search_input' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -45,7 +45,7 @@ class OrderController
             ], 422);
         }
 
-        $query = $request->input('query');
+        $query = $request->input('search_input');
         $filteredOrders = Orders::where('customer_name', 'like', '%' . $query . '%')->get();
 
         return response()->json($filteredOrders);

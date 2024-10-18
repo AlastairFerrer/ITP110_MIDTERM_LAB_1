@@ -35,12 +35,12 @@ $(document).ready(function() {
         $.ajax({
             url: '/search',
             method: 'POST',
-            data: { query: inputSearch, _token: token },
+            data: { search_input: inputSearch, _token: token },
             success: function(filteredOrders) {
                 displayOrders(filteredOrders);
             },
             error: function(xhr) {
-                alert('Error: ' + xhr.responseJSON.errors.query[0]);
+                alert(xhr.responseJSON.errors.query[0]);
             }
         });
     });
